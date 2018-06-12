@@ -210,7 +210,7 @@
 
 
 |    值    | 空白符 | 换行符 | 自动换行 |
-|   ----   |  ----- | - ---- |  ------- |
+|   ----   |  ----- | ------ | ------- |
 | pre-line | 合并   | 保留   | 允许     |
 | normal   | 合并   | 忽略   | 允许     |
 | nowrap   | 合并   | 忽略   | 不允许   |
@@ -473,8 +473,42 @@ css弹性布局是一种针对用户界面设计而优化的CSS盒子模型。
                     "ft ft ft  ft   ft   ft   ft   ft   ft";
             }
 
-    若需要留出空白的网格单元可使用“-”占位。
+    若需要留出空白的网格单元可使用“.”占位。
     当通过媒体查询重新定义网络时，区域名称定义要在媒体查询之外。
+
+        .header {
+            grid-area: hd;
+        }
+        .footer {
+            grid-area: ft;
+        }
+        .content {
+            grid-area: main;
+        }
+        .side {
+            grid-area: sd;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-auto-rows: minmax(100, auto);
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "hd"
+                "main"
+                "sd"
+                "ft"
+        }
+
+        @media (min-width: 500px) {
+            .wrapper {
+                grid-template-columns: repeat(9, 1fr);
+                grid-template-areas:
+                    "hd hd hd  hd   hd   hd   hd   hd   hd"
+                    "sd sd sd main main main main main main"
+                    "sd sd sd  ft   ft   ft   ft   ft   ft"
+            }
+        }
 
     - 简写
         + grid-template可同时设置grid-template-rows/grid-template-columns/grid-template-areas
@@ -489,12 +523,12 @@ css弹性布局是一种针对用户界面设计而优化的CSS盒子模型。
                         / 1fr 1fr 1fr 1f 1fr 1f 1fr 1f 1fr;
                 }
 
-        + grid同时设置了grid-template-rows/grid-template-columns/grid-template-areas/grid-auto-rows/grid-auto-columns/grid-auto-flow。值得注意的是，这个属性会吧grid-gap重置为0，且不能在简写中设置间距值。
+        + grid同时设置了grid-template-rows/grid-template-columns/grid-template-areas/grid-auto-rows/grid-auto-columns/grid-auto-flow。值得注意的是，这个属性不会重置grid-gap，且不能在简写中设置间距值。
     
     - 自动定位
         + 默认流向是按行排列，可通过设置grid-auto-flow为cloumn改变流向；
         + 对自动定位的项目，若轨道的大小不适合放置一个项目，则该项目会下移一行，直至找到可容纳它的空间。
-        + 填充缺口：在grid-auto-flow加入dense关键字，网格会为缺口找到适合的项目，然后把该项从DOM中拿出放置到缺口中。这样设置后，网格项在DOM中的顺序与实际显示的顺序是不一致的。
+        + 填充缺口：在grid-auto-flow加入dense关键字，网格会为缺口找到适合的项目，然后把该项从DOM中拿出放置到缺口中。这样设置后，网格项在DOM中的顺序可能与实际显示顺序不一致。
 
 * 间距：
 grid-column-gap、grid-row-gap或者简写形式grid-gap。间距只会出现在轨道与轨道之间，不会出现在网格容器的四周。
@@ -531,7 +565,7 @@ grid-column-gap、grid-row-gap或者简写形式grid-gap。间距只会出现在
                 grid-auto-rows: 100px;
                 grid-template-area: 
                     "a a a a b b b b"
-                    "- - - - b b b b"
+                    ". . . . b b b b"
                     "c c c c d d d d"
                     "c c c c d d d d";
                 align-items: start;
