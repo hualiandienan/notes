@@ -601,7 +601,7 @@ grid-column-gap、grid-row-gap或者简写形式grid-gap。间距只会出现在
     容器可通过justify-items设置项目在文本方向的轴线上的对齐方式，可选值同align-items。项目可通过justify-self设置自身在文本方向的轴线上的对齐方式。
 
     - 外边距
-    网格项可以使用自动外边距的方法设置对齐。当外边距设置为auto时，外边距能够自动消化多去的空间。
+    网格项可以使用自动外边距的方法设置对齐。当外边距设置为auto时，外边距能够自动消化多余的空间。
 
             .wrapper {
                 display: grid;

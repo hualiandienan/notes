@@ -72,4 +72,13 @@ Metadata元素指那些定义文档元数据信息的元素。其作用包括影
 
 参考资料：<https://blog.kissmetrics.com/open-graph-meta-tags/>
 
-## SVG
+## PICTURE
+\<picture>元素是一个容器，用来为内部\<img>元素提供多样的source
+
+    <picture>
+        <source srcset="https://cloud.24ways.org/authors/jensimmons72.webp" type="image/webp">
+        <img class="u-photo" src="https://cloud.24ways.org/authors/jensimmons72.jpg" width="72" height="72" alt="">
+    </picture>
+
+### WebP --- 一种新的网络图片格式
+
