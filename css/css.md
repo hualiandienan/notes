@@ -330,7 +330,7 @@ css弹性布局是一种针对用户界面设计而优化的CSS盒子模型。
 * align-self：设置项目自身的交叉轴对齐方式，与align-items值相较，多了一个属性值“auto”，该值也是默认值，表示继承容器的align-items属性。
 * flex-grow：默认值为0，该属性定义了当存在剩余空间时，项目放大的比例（份数）。
 * flex-shrink：默认值为1，该属性定义了当空间不够时，项目缩放的比例（相对其他项目）。当设置为0时，空间不足时，该项目不缩小。注意，项目不会缩小到最小值以下。
-* flex-basis：该属性定义了在缩放前（分配空间前）占用主轴的空间。值<length> | auto.
+* flex-basis：该属性定义了在缩放前（分配空间前）占用主轴的空间。值\<length> | auto.
 * 简写flex：flex分别是flex-grow/flex-shrink/flex-basis的简写。有以下特殊值
     - initial：表示“0 1 auto”（不设置三个属性时）；
     - auto：表示“1 1 auto”；
@@ -374,7 +374,7 @@ css弹性布局是一种针对用户界面设计而优化的CSS盒子模型。
 * fr单位：1fr表示占用剩余可用空间的一份；
 * repeat(num, trackSize [, trackSize])：重复定义网络轨道；
 * minmax()函数：定义网络轨道的最小和最大值；
-* fit-content(): min(maximum size, max(minimum size, argument))；
+* fit-content(): min(maximum size, max(minimum size, argument))[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content)；
 
 ### 属性
 * 轨道定义（容器）：

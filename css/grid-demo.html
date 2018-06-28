@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>grid demo</title>
+
+
+<style>
+    :root {
+        --font-color: rgba(12, 12, 10, 0.8);
+    }
+    html {
+        font-size: calc(100% + 1.8vw);
+    }
+    @media screen and (max-width: 320px) {
+        html {
+            font-size: 16px;
+        }
+    }
+    @media screen and (min-width: 640px) {
+        html {
+            font-size: 28px;
+        }
+    }
+    .layout-container {
+        min-height: 100vh;
+    }
+    .container {
+        width: 65vw;
+        margin: auto;
+        display: grid;
+        grid-template-columns: auto repeat(3, 1fr) 0.5fr;
+        grid-template-rows: auto repeat(3, 1fr) 10vh;
+        grid-gap: 0.75rem;
+        grid-template-areas: 
+            "header header header   .      .   "
+            "   .      .   divide login  login "
+            "   .      .   divide login  login "
+            " third  third divide   .      .   "
+            " third  third signup signup signup";
+    }
+    .header {
+        grid-area: header;
+        font-size: 1.5rem;
+        color: var(--font-color);
+    }
+    .login {
+        grid-area: login;
+        font-size: 0.7125rem;
+    }
+    .forgot {
+        grid-area: forgot;
+    }
+    .divide {
+        grid-area: divide;
+        justify-self: end;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .divide > span {
+        display: block;
+        width: 2.25rem;
+        padding: 1vh 0;
+        color: #ccc;
+        border: 2px solid #888;
+        border-radius: 0.5rem;
+        text-align: center;
+        font-size: 0.875rem;
+    }
+    .divide::before, .divide::after {
+        content: '';
+        display: block;
+        width: 0.125rem;
+        flex: 1;
+        background-color: #888;
+    }
+    .third {
+        grid-area: third;
+    }
+    .signup {
+        grid-area: signup;
+    }
+</style>
+</head>
+<body>
+<main class="layout-container">
+    <section class="container">
+        <header class="header">
+            <h1>GIRD Log in!</h1>
+        </header>
+        <div class="login">
+            <form>
+            <div>
+                <label>USERNAME OR EMAIL</label>
+                <input type="text" />
+            </div>
+            <div>
+                <label>PASSWORD</label>
+                <input type="password" />
+            </div>
+            <div>
+                <button type="submit">Log in</button>
+                <button>Forgot Password?</button>
+            </div>
+            </form>
+        </div>
+        <!-- <div class="forgot">
+            <form>
+                <h3>Reset Your Password</h3>
+                <div>
+                    <label>Username Or Email</label>
+                    <input type="text" />
+                </div>
+                <div>
+                    <input type="button" value="Send Password Reset Email" />
+                </div>
+                <div>
+                    <p>Your password reset email should arrive shortly.</p>
+                    <p>If you don't see it, please check your spam folder, sometimes it can end up there!</p>
+                </div>
+            </form>
+        </div> -->
+        <div class="divide">
+            <span>OR</span>
+        </div>
+        <div class="third">
+            <ul>
+                <li>
+                    <a href="http://www.bing.com">
+                        <span>Log In with Twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.bing.com">
+                        <span>Log In with GitHub</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.bing.com">
+                        <span>Log In with Facebook</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="signup">
+            <span>Need an account?</span><a>Sign up now!</a>
+        </div>
+    </section>
+</main>
+</body>
+</html>
