@@ -342,7 +342,7 @@ css弹性布局是一种针对用户界面设计而优化的CSS盒子模型。
 
 ### 注意事项
 * 弹性容器直接包含的文本（除只包含空白符外）将自动包覆匿名项；
-* 项目相对容易绝对定位时，其静态位置参照内容框主轴开始的角落，而后依据此定位；
+* 项目相对容器绝对定位时，其静态位置参照内容框主轴开始的角落，而后依据此定位；
 * 相邻的项目其外边距不会相互合并，使用auto的外边距可吸收掉水平或垂直方向上的额外空间，实现对齐；
 * 若项目居中对齐时，即使项目溢出容器还是居中显示，此刻意味着溢出部分将无法滚动到达；
 * 在弹性盒子中将无效的属性：
@@ -372,6 +372,7 @@ css弹性布局是一种针对用户界面设计而优化的CSS盒子模型。
 
 ### 属性值
 * fr单位：1fr表示占用剩余可用空间的一份；
+* auto，用auto意味着行的尺寸将会根据内容的大小来自动变换；
 * repeat(num, trackSize [, trackSize])：重复定义网络轨道；
 * minmax()函数：定义网络轨道的最小和最大值；
 * fit-content(): min(maximum size, max(minimum size, argument))[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content)；
@@ -701,6 +702,8 @@ GRID的定位属性属于逻辑属性，与文字书写模式相关。文字书�
     - grid-cloumn-start as -ms-grid-column
     - align-self as -ms-grid-column-align
     - justify-self as -ms-grid-row-align
+
+[demo](https://codepen.io/kunleshuia/pen/Nzexzy?editors=1100)
 
 ## display: contents（支持度较低）
 display:contents的元素自身不会产生盒模型，但是它的子元素及伪元素都可以产生盒模型。其在页面表现如同被子元素或伪元素替换了。
