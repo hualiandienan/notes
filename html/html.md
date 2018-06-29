@@ -13,7 +13,7 @@ HTML4及XHTML的元素分为__内联元素__和__块元素__。而HTML5的元素
 。这些分类集合存在一定的交集。
 其关系如下：
 
-![HTML REFRENCE](./imgs/html5-nesting.png)
+![HTML REFRENCE](../imgs/html5-nesting.png)
 
 1. Metadata(元数据元素-为描述数据的数据，主要是描述数据属性的信息）
 Metadata元素指那些定义文档元数据信息的元素。其作用包括影响文档中其他节点的展现与行为、定义文档与其他外部资源之间的关系等。例
@@ -63,12 +63,12 @@ Metadata元素指那些定义文档元数据信息的元素。其作用包括影
 * FACEBOOK TAG：
 
         <meta property="og:title" content="Your eye-catching title here" />
-![HTML REFRENCE](./imgs/Facebook-2014-03-03.jpg)
+![HTML REFRENCE](../imgs/Facebook-2014-03-03.jpg)
 
 * Twitter TAG
 
         <meta name="twitter:card" content="summary" />
-![HTML REFRENCE](./imgs/Twitter.jpg)
+![HTML REFRENCE](../imgs/Twitter.jpg)
 
 参考资料：<https://blog.kissmetrics.com/open-graph-meta-tags/>
 
