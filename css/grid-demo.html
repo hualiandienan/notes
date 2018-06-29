@@ -29,6 +29,8 @@
     }
     .container {
         width: 65vw;
+        height: 100vh;
+        min-height: 500px;
         margin: auto;
         display: grid;
         grid-template-columns: auto repeat(3, 1fr) 0.5fr;
@@ -37,7 +39,7 @@
         grid-template-areas: 
             "header header header   .      .   "
             "   .      .   divide login  login "
-            "   .      .   divide login  login "
+            " third  third divide login  login "
             " third  third divide   .      .   "
             " third  third signup signup signup";
     }
@@ -50,6 +52,30 @@
         grid-area: login;
         font-size: 0.7125rem;
     }
+    .login label {
+        display: block;
+        color: #9396A4;
+        font-size: 0.5rem;
+        margin-bottom: 1vh;
+    }
+    .login input {
+        width: 100%;
+        padding: 1.5vh;
+        font-size: 0.6rem;
+        border-radius: 0.325rem;
+        border: 0.125rem solid #EAEDF0;
+    }
+    .login button {
+        background-color: #2fb45a;
+        color: #000;
+        font-size: 0.6rem;
+        padding: 0.375rem 0.5rem;
+        outline: none;
+        border: none;
+        border-radius: 0.125rem;
+        margin-top: 3vh;
+    }
+
     .forgot {
         grid-area: forgot;
     }
@@ -80,9 +106,32 @@
     }
     .third {
         grid-area: third;
+        align-self: end;
+    }
+    .third ul {
+        margin: 0;
+    }
+    .third li:not(last-child) {
+        list-style: none;
+        width: 100%;
+        padding: 3vh 0;
+        font-size: 0.6rem;
+        background-color: #60b5f0;
+        margin-bottom: 1vh;
+        text-align: center;
+        border-radius: 0.125rem;
+    }
+    .third li a {
+        color: #fff;
+        text-decoration: none;
     }
     .signup {
         grid-area: signup;
+        align-self: end;
+        background-color: #32333B;
+        color: #9396A4;
+        font-size: 0.5rem;
+        padding: 3vh 2vw;
     }
 </style>
 </head>
@@ -104,7 +153,7 @@
             </div>
             <div>
                 <button type="submit">Log in</button>
-                <button>Forgot Password?</button>
+                <!-- <button>Forgot Password?</button> -->
             </div>
             </form>
         </div>
